@@ -1,71 +1,265 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    --blue: #33BDF1;
+    --light-green: #3BDF7D;
+    --green: #92C83F;
+    --yellow: #F5CA23;
+    --orange: #FC7F20;
+    --light-grey: #e1e1e4;
+    --danger: #D6230F;
+    --info: #4093FF;
+    --success: #1BA65E;
+    --warning: #FCA400;
+    --brand-red: #BF1725;
+    --brand-blue: #030A8C;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    background-color: var(--light-grey);
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:click {
+        text-decoration: none;
+        color: #000;
+    }
+
+.modal-wrap {
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal {
+    background-color: var(--light-grey);
+    width: 90%;
+    height: 500px;
+    max-width: 600px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    margin: auto 10%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-danger {
+    color: var(--danger)
+}
+
+.text-info {
+    color: var(--info);
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-warning {
+    color: var(--warning);
+}
+
+.mx-0 {
+    margin: 0 .25rem;
+}
+
+.logo img {
+    width: 350px;
+}
+
+@media (max-width: 700px) {
+
+    #nav {
+        justify-content: space-around;
+    }
+
+    #navbar ul {
+        display: block;
+        text-align: center;
+    }
+}
+
+.btn {
+    border: none;
+    padding: .25rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: var(--light-grey);
+}
+
+.btn-info {
+    background-color: var(--info);
+    color: var(--light-grey);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: var(--light-grey);
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: var(--light-grey);
+}
+
+.btn-outline-danger {
+    border: 1px solid var(--danger) !important;
+}
+
+.btn-outline-info {
+    border: 1px solid var(--info) !important;
+}
+
+.btn-outline-success {
+    border: 1px solid var(--success) !important;
+}
+
+.btn-outline-warning {
+    border: 1px solid var(--warning) !important;
+}
+
+.card {
+    border-left: 7px solid var(--brand-red);
+    padding: .5rem;
+    max-width: 250px;
+    background-color: #fff;
+    margin: .5rem;
+}
+
+    .card:nth-child(even) {
+        border-left: 7px solid var(--brand-blue);
+    }
+
+.card-body {
+    padding: .25rem .5rem;
+}
+
+.card-footer {
+    text-align: end;
+    margin: .25rem .5rem;
+}
+
+.icon-danger {
+    font-size: 7rem;
+}
+
+.btn-add {
+    background-color: var(--success);
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 90%;
+    right: 0;
+    margin-right: 10%;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-none {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+    .d-none:hover {
+        opacity: 1;
+    }
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.list-social-networks {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.item-social-network {
+    margin: 0 .5rem;
+}
+
+    .item-social-network a {
+        color: var(--brand-blue);
+    }
+
+        .item-social-network a:hover {
+            color: var(--brand-red) !important;
+        }
+
+        .item-social-network a:active {
+            color: var(--brand-red);
+        }
+
+        .item-social-network a:visited {
+            color: var(--brand-blue);
+        }
+
+.input {
+    width: 100%;
+    padding: .25rem;
+    margin: .5rem 0;
+}
+
+.btn {
+    border: none;
+    padding: .25rem;
+    border-radius: 5px;
 }
