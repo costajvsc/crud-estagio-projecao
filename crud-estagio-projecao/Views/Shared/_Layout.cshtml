@@ -3,46 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - crud_estagio_projecao</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - CRUD Estágio Projeção</title>
+    @*<style> @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap'); </style>*@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">crud_estagio_projecao</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - crud_estagio_projecao - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div id="nav" class="d-flex justify-content-center align-items-center">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="">
+                </div>
+                <!-- <nav id="navbar">
+                    <ul class="d-flex justify-content-center">
+                        <li class="mx-0">
+                            <a href="index.html">Clientes</a>
+                        </li>
+                        <li class="mx-0">
+                            <a href="info.html">Telefone</a>
+                        </li>
+                        <li class="mx-0">Configurações</li>
+                    </ul>
+                </nav> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="">
+        <div class="container">
+            <h3 class="text-center">Desenvolvido por João Victor</h3>
+            <ul class="list-social-networks">
+                <li class="item-social-network">
+                    <a href="https://github.com/costajvsc">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li class="item-social-network">
+                    <a href="https://www.linkedin.com/in/victor-costa-jvsc/">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                </li>
+                <li class="item-social-network">
+                    <a href="mailto:costa.jvsc@gmail.com.com">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li class="item-social-network">
+                    <a href="http://api.whatsapp.com/send?phone=5561996279859&text=Olá João, visualizei o seu projeto *CRUD em C#* aplicado a vaga de estágio do grupo Projeção e gostaria saber um pouco mais sobre ">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                </li>
+                <li class="item-social-network">
+                    <a href="https://www.instagram.com/mad.joao">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
