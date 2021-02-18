@@ -32,20 +32,15 @@ a {
     color: #000;
 }
 
-    a:visited {
-        text-decoration: none;
-        color: #000;
-    }
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
 
-    a:hover {
-        text-decoration: none;
-        color: #000;
-    }
-
-    a:click {
-        text-decoration: none;
-        color: #000;
-    }
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
 
 .modal-wrap {
     display: none;
@@ -236,21 +231,21 @@ a {
     margin: 0 .5rem;
 }
 
-    .item-social-network a {
-        color: var(--brand-blue);
-    }
+.item-social-network a {
+    color: var(--brand-blue);
+}
 
-        .item-social-network a:hover {
-            color: var(--brand-red) !important;
-        }
+.item-social-network a:hover {
+    color: var(--brand-red) !important;
+}
 
-        .item-social-network a:active {
-            color: var(--brand-red);
-        }
+.item-social-network a:active {
+    color: var(--brand-red);
+}
 
-        .item-social-network a:visited {
-            color: var(--brand-blue);
-        }
+.item-social-network a:visited {
+    color: var(--brand-blue);
+}
 
 .input {
     width: 100%;

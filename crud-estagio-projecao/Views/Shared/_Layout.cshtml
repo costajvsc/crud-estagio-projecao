@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CRUD Estágio Projeção</title>
+    <script src="https://kit.fontawesome.com/d5e0d5b45e.js" crossorigin="anonymous"></script>
     @*<style> @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap'); </style>*@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -28,7 +29,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main>  
         @RenderBody()
     </main>
 
@@ -64,6 +65,7 @@
             </ul>
         </div>
     </footer>
-    @RenderSection("Scripts", required: false)
+    <script src="~/js/modal.js"></script>
+    @RenderSection("Scripts", required: false);
 </body>
 </html>
