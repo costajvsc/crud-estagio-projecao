@@ -7,18 +7,13 @@
 }
 
 :root {
-    --blue: #33BDF1;
-    --light-green: #3BDF7D;
-    --green: #92C83F;
-    --yellow: #F5CA23;
-    --orange: #FC7F20;
     --light-grey: #e1e1e4;
     --danger: #D6230F;
     --info: #4093FF;
     --success: #1BA65E;
     --warning: #FCA400;
-    --brand-red: #BF1725;
-    --brand-blue: #030A8C;
+    --brand-red: #C11718;
+    --brand-blue: #192A4A;
 }
 
 body {
@@ -96,23 +91,25 @@ a:hover {
     width: 350px;
 }
 
-@media (max-width: 700px) {
-
-    #nav {
-        justify-content: space-around;
-    }
-
-    #navbar ul {
-        display: block;
-        text-align: center;
-    }
-}
-
 .btn {
     border: none;
     padding: .25rem;
     border-radius: 5px;
     box-sizing: border-box;
+}
+.btn-add {
+    background-color: var(--success);
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 90%;
+    right: 0;
+    margin-right: 10%;
 }
 
 .btn-danger {
@@ -154,14 +151,17 @@ a:hover {
 .card {
     border-left: 7px solid var(--brand-red);
     padding: .5rem;
-    max-width: 250px;
+    width: 300px;
     background-color: #fff;
     margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-    .card:nth-child(even) {
-        border-left: 7px solid var(--brand-blue);
-    }
+.card:nth-child(even) {
+    border-left: 7px solid var(--brand-blue);
+}
 
 .card-body {
     padding: .25rem .5rem;
@@ -176,21 +176,6 @@ a:hover {
     font-size: 7rem;
 }
 
-.btn-add {
-    background-color: var(--success);
-    border-radius: 50%;
-    height: 32px;
-    width: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: fixed;
-    top: 90%;
-    right: 0;
-    margin-right: 10%;
-}
-
 .d-flex {
     display: flex;
     flex-wrap: wrap;
@@ -201,9 +186,9 @@ a:hover {
     transition: opacity 0.3s ease;
 }
 
-    .d-none:hover {
-        opacity: 1;
-    }
+.d-none:hover {
+    opacity: 1;
+}
 
 .justify-content-between {
     justify-content: space-between;
@@ -253,8 +238,3 @@ a:hover {
     margin: .5rem 0;
 }
 
-.btn {
-    border: none;
-    padding: .25rem;
-    border-radius: 5px;
-}
