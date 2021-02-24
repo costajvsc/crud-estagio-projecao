@@ -8,60 +8,60 @@ using System.Threading.Tasks;
 
 namespace crud_estagio_projecao.Controllers
 {
-    public class ClienteController : Controller
+    public class ClientController : Controller
     {
         private AppDbContext _context;
-        public ClienteController()
+        public ClientController()
         {
             _context = new AppDbContext();
         }
         public IActionResult Index()
         {
-            var clientes = _context.Clientes.Include(cliente => cliente.Telefones).ToList();
-            return View(clientes);
+            var clients = _context.Clients.Include(client => client.Phones).ToList();
+            return View(clients);
         }
 
         [HttpPost]
-        public IActionResult Create(string nome)
+        public IActionResult Create(string nameClient)
         {
-            var cliente = new Cliente();
-            cliente.nome = nome;
-            _context.Add<Cliente>(cliente);
+            var client = new Client();
+            client.nameClient = nameClient;
+            _context.Add<Client>(client);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
 
         [HttpPost]
-        public IActionResult Edit(string ClienteID, string nome)
+        public IActionResult Edit(string ClientID, string nameClient)
         {
-            var id = Convert.ToInt32(ClienteID);
-            var cliente = _context.Clientes.Find(id);
-            if(cliente == null)
+            var id = Convert.ToInt32(ClientID);
+            var client = _context.Clients.Find(id);
+            if(client == null)
             {
                 return RedirectToAction("Index");
             }
 
-            cliente.nome = nome;
+            client.nameClient = nameClient;
 
-            _context.Clientes.Update(cliente);
+            _context.Clients.Update(client);
             _context.SaveChanges();
 
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult Delete(string ClienteID)
+        public IActionResult Delete(string ClientID)
         {
-            var id = Convert.ToInt32(ClienteID);
-            var cliente = _context.Clientes.Find(id);
+            var id = Convert.ToInt32(ClientID);
+            var client = _context.Clients.Find(id);
 
-            if(cliente == null)
+            if(client == null)
             {
                 return RedirectToAction("Index");
             }
 
-            _context.Clientes.Remove(cliente);
+            _context.Clients.Remove(client);
             _context.SaveChanges();
 
             return RedirectToAction("Index");

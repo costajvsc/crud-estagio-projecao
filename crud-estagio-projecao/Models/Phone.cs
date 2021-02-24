@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace crud_estagio_projecao.Models
 {
-    public class Telefone
+    public class Phone
     {
-        public int TelefoneID { get; set; }
-        public int ClienteID { get; set; }
+        public int PhoneID { get; set; }
+        public int ClientID { get; set; }
         [JsonIgnore]
-        public Cliente Cliente { get; set; }
+        public Client Client { get; set; }
         public int ddd { get; set; }
-        public int telefone { get; set; }
+        public int phoneNumber { get; set; }
 
     }
 }

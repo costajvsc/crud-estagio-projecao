@@ -18,58 +18,58 @@ namespace crud_estagio_projecao.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("crud_estagio_projecao.Models.Cliente", b =>
+            modelBuilder.Entity("crud_estagio_projecao.Models.Client", b =>
                 {
-                    b.Property<int>("ClienteID")
+                    b.Property<int>("ClientID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("nome")
+                    b.Property<string>("nameClient")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ClienteID");
+                    b.HasKey("ClientID");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("crud_estagio_projecao.Models.Telefone", b =>
+            modelBuilder.Entity("crud_estagio_projecao.Models.Phone", b =>
                 {
-                    b.Property<int>("TelefoneID")
+                    b.Property<int>("PhoneID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClienteID")
+                    b.Property<int>("ClientID")
                         .HasColumnType("int");
 
                     b.Property<int>("ddd")
                         .HasColumnType("int");
 
-                    b.Property<int>("telefone")
+                    b.Property<int>("phoneNumber")
                         .HasColumnType("int");
 
-                    b.HasKey("TelefoneID");
+                    b.HasKey("PhoneID");
 
-                    b.HasIndex("ClienteID");
+                    b.HasIndex("ClientID");
 
-                    b.ToTable("Telefones");
+                    b.ToTable("Phones");
                 });
 
-            modelBuilder.Entity("crud_estagio_projecao.Models.Telefone", b =>
+            modelBuilder.Entity("crud_estagio_projecao.Models.Phone", b =>
                 {
-                    b.HasOne("crud_estagio_projecao.Models.Cliente", "Cliente")
-                        .WithMany("Telefones")
-                        .HasForeignKey("ClienteID")
+                    b.HasOne("crud_estagio_projecao.Models.Client", "Client")
+                        .WithMany("Phones")
+                        .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cliente");
+                    b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("crud_estagio_projecao.Models.Cliente", b =>
+            modelBuilder.Entity("crud_estagio_projecao.Models.Client", b =>
                 {
-                    b.Navigation("Telefones");
+                    b.Navigation("Phones");
                 });
 #pragma warning restore 612, 618
         }

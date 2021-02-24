@@ -52,7 +52,7 @@ namespace crud_estagio_projecao
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Cliente}/{action=Index}/");
+                    pattern: "{controller=Client}/{action=Index}/");
             });
         }
     }

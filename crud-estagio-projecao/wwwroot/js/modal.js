@@ -15,44 +15,42 @@ const modalWrapDeletePhone = document.querySelector('[data-js="modal-delete-phon
 const showModalAddClient = data => {
     modalWrapAddClient.style.display = 'block';
 }
-const showModalEditClient = (ClientID, nome, telefones)  => {
+const showModalEditClient = (ClientID, clientName, telefones)  => {
     let labelNameClient = document.querySelector('[data-js="label-name-client-edit"]');
-    let inputId = document.querySelector('#id-client-edit');
-    let inputName = document.querySelector('#name-client-edit');
+    let clientIDInput = document.querySelector('#id-client-edit');
+    let clientNameInput= document.querySelector('#name-client-edit');
     
-    labelNameClient.innerHTML = nome
-    inputName.value = nome;
-    inputId.value = ClientID;
+    labelNameClient.innerHTML = clientName
+    clientNameInput.value = clientName;
+    clientIDInput.value = ClientID;
 
     modalWrapEditClient.style.display = 'block';
 }
-const showModalDeleteClient = (ClientID, nome, telefones) => {
+const showModalDeleteClient = (ClientID, clientName) => {
     let labelNameClient = document.querySelector('[data-js="label-name-client-delete"]');
-    let inputId = document.querySelector('#id-client-delete');
+    let clientIDInput = document.querySelector('#id-client-delete');
     
-    labelNameClient.innerHTML = nome
-    inputId.value = ClientID;
+    labelNameClient.innerHTML = clientName
+    clientIDInput.value = ClientID;
     
     modalWrapDeleteClient.style.display = 'block';
 }
 
-const showModalAddPhone = (ClientID, nome, telefones) => {
+const showModalAddPhone = (ClientID, nameClient, phones) => {
     let labelNameClient = document.querySelector('[data-js="label-name-phone-add"]');
     let listPhone = document.querySelector('[data-js="list-phone-add"]');
-    let inputId = document.querySelector('#client-id-add-phone');
+    let clientIDInput = document.querySelector('#client-id-add-phone');
 
-    labelNameClient.innerHTML = nome
-    inputId.value = ClientID
-
-    console.log(telefones)
+    labelNameClient.innerHTML = nameClient
+    clientIDInput.value = ClientID
 
     listPhone.innerHTML = ''
-    telefones.forEach(phone => {
+    phones.forEach(phone => {
         let li = document.createElement('li');
-        li.innerHTML = `<span> ${phone.ddd} ${phone.telefone} </span>
+        li.innerHTML = `<span> ${phone.ddd} ${phone.phoneNumber} </span>
             <span> 
-                <i id="btn-edit-delete" onclick="showModalEditPhone('${phone.telefoneID}', '${phone.ddd}', '${phone.telefone}')" class="fas fa-edit fa-lg mx-0 text-warning d-none" aria-hidden="true"></i>
-                <i id="btn-delete-phone" onclick="showModalDeletePhone('${phone.telefoneID}')" class="far fa-trash-alt mx-0 fa-lg text-danger d-none" aria-hidden="true"></i>
+                <i id="btn-edit-delete" onclick="showModalEditPhone('${phone.phoneID}', '${phone.ddd}', '${phone.phoneNumber}')" class="fas fa-edit fa-lg mx-0 text-warning d-none" aria-hidden="true"></i>
+                <i id="btn-delete-phone" onclick="showModalDeletePhone('${phone.phoneID}')" class="far fa-trash-alt mx-0 fa-lg text-danger d-none" aria-hidden="true"></i>
             </span>
         ` 
         li.classList.add('d-flex', 'justify-content-between');
@@ -61,21 +59,21 @@ const showModalAddPhone = (ClientID, nome, telefones) => {
 
     modalWrapAddPhone.style.display = 'block';
 }
-const showModalEditPhone = (TelefoneID, ddd, telefone) => {
-    let phoneID = document.querySelector('#id-phone-edit');
-    let phoneDDD = document.querySelector('#edit-ddd-phone');
-    let phoneNumber = document.querySelector('#edit-phone-number');
+const showModalEditPhone = (phoneID, ddd, phoneNumber) => {
+    let phoneIDInput = document.querySelector('#id-phone-edit');
+    let phoneDDDInput = document.querySelector('#edit-ddd-phone');
+    let phoneNumberInput = document.querySelector('#edit-phone-number');
 
-    phoneID.value = TelefoneID
-    phoneDDD.value = ddd
-    phoneNumber.value = telefone
+    phoneIDInput.value = phoneID
+    phoneDDDInput.value = ddd
+    phoneNumberInput.value = phoneNumber
 
     modalWrapEditPhone.style.display = 'block';
 }
-const showModalDeletePhone = TelefoneID => {
-    let phoneID = document.querySelector('#id-phone-delete')
+const showModalDeletePhone = PhoneID => {
+    let phoneIDInput = document.querySelector('#id-phone-delete')
 
-    phoneID.value = TelefoneID
+    phoneIDInput.value = PhoneID
 
     modalWrapDeletePhone.style.display = 'block';
 }
